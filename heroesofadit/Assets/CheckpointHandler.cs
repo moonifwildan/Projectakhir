@@ -22,7 +22,7 @@ public class CheckpointHandler : MonoBehaviour
     {
         if (other.CompareTag("Respawn Point"))
         {
-            Debug.Log("Set Spawn");
+        
             respawnPoint = other.gameObject.transform;
         }
     }

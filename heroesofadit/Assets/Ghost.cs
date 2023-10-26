@@ -10,17 +10,34 @@ public class Ghost : MonoBehaviour
     Rigidbody2D rb;
     private SpriteRenderer spriteRenderer; // Add a reference to the SpriteRenderer component.
 
-    // Start is called before the first frame update
+    public float Health
+    {
+        set
+        {
+            _health = value;
+
+            if(_health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        get
+        {
+            return _health;
+        }
+    }
+
+    public float _health = 5f;
     void Start()
     {
-        rb = GetComponent <Rigidbody2D>();
-        spriteRenderer = GetComponent <SpriteRenderer>(); // Get the SpriteRenderer component.
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component.
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (detectionzon.detectedObjs.Count > 0)
+        if (detectionzon != null && detectionzon.detectedObjs.Count > 0)
         {
             Vector2 direction = (detectionzon.detectedObjs[0].transform.position - transform.position).normalized;
 
@@ -39,4 +56,10 @@ public class Ghost : MonoBehaviour
             }
         }
     }
+    void OnHit(float damage)
+    {
+        Debug.Log("Ghost hit for " + damage);
+       Health -= damage;
+    }
+  
 }

@@ -149,9 +149,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13180816, y: 0.44109517}
+  m_Offset: {x: 0.13180816, y: 0.11734786}
   serializedVersion: 2
-  m_Radius: 1.4254931
+  m_Radius: 1.7215666
 --- !u!95 &3608313171867455154
 Animator:
   serializedVersion: 5
@@ -202,7 +202,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -221,7 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 500
-  detectionzon: {fileID: 864046632116671144}
+  detectionzon: {fileID: 5811997159774388846}
+  _health: 5
 --- !u!1 &6602936647146793030
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6422960200308695486}
   - component: {fileID: 7858821061055050995}
+  - component: {fileID: 5811997159774388846}
   - component: {fileID: 864046632116671144}
   m_Layer: 0
   m_Name: DetectionZone
@@ -290,6 +292,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 9
+--- !u!114 &5811997159774388846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602936647146793030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b075051d4a21c044bb2db7fe26e89b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagTarget: Player
+  detectedObjs: []
+  col: {fileID: 7858821061055050995}
 --- !u!114 &864046632116671144
 MonoBehaviour:
   m_ObjectHideFlags: 0
